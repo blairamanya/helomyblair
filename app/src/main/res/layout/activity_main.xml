@@ -51,6 +51,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005"
         tools:layout_editor_absoluteX="201dp"
         tools:layout_editor_absoluteY="359dp" />
 
@@ -58,8 +64,23 @@
         android:id="@+id/musicbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="178dp"
+        android:onClick="sendMessage"
+        android:textSize="20dp"
         android:text="music"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toEndOf="@+id/message"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="189dp"
         tools:layout_editor_absoluteY="459dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="283dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
