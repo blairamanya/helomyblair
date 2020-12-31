@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="data collection"
+        android:textSize="24dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="your name"
+        android:textSize="20dp"
+        android:layout_below="@+id/begin"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter sex"
+        android:textSize="20dp"
+        android:layout_below="@+id/name"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/tribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter tribe"
+        android:textSize="20dp"
+        android:layout_below="@+id/sex"
+        android:inputType="textPersonName"
+        />
+
+    <Button
+        android:id="@+id/insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tribe"
+        android:layout_marginTop="4dp"
+        android:text="Add data"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insert"
+        android:layout_marginTop="0dp"
+        android:text="Update data"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update"
+        android:layout_marginTop="3dp"
+        android:text="Delete data"
+        android:textSize="24dp" />
+
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delete"
+        android:layout_marginTop="-4dp"
+        android:text="View data"
+        android:textSize="24dp" />
+
+        />
+
+</RelativeLayout>

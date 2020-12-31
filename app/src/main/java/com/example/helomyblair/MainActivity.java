@@ -1,10 +1,17 @@
 package com.example.helomyblair;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Instrumentation;
 import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,12 +20,51 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity  {
+private Button start,stop;
+    EditText mHourEditText, mMinuteEditText;
+    Button mSetAlarmButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mHourEditText = findViewById(R.id.hour_edit_text);
+        mMinuteEditText = findViewById(R.id.minute_edit_text);
+
+        mSetAlarmButton = findViewById(R.id.set_alarm_button);
+        mSetAlarmButton.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           int hour = Integer.parseInt(mHourEditText.getText().toString());
+           int minutes = Integer.parseInt(mMinuteEditText.getText().toString());
+
+           Intent intent= new Intent(AlarmClock.ACTION_SET_ALARM);
+           intent.putExtra(AlarmClock.EXTRA_HOUR,hour);
+           intent.putExtra(AlarmClock.EXTRA_MINUTES,minutes);
+
+           if (hour <= 24 && minutes <= 60){
+               startActivity(intent);
+           }
+
+       }
+   }
+);
+
+
+        Button btn = (Button) findViewById(R.id.biodata);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,sqile.class));
+            }
+        });
+
+
+
+
+
+        
+       
 
         Button music= (Button)findViewById(R.id.musicbtn);
         music.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
         public void sendMessage(View view) {
